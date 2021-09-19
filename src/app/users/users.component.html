@@ -1,0 +1,7 @@
+<div class="row" *ngFor="let user of users">
+  <div class="col-12">
+    <p style="cursor: pointer" routerLink="/users/{{ user.id }}">
+      {{ user.id }}. {{ user.firstName }} {{ user.surname }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-12">
+    {{ currentUser?.firstName }}
+    {{ currentUser?.surname }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h3>Friends</h3>
+  </div>
+  <div class="col-12" *ngFor="let friend of allFriends">
+    <p style="cursor: pointer" (click)="onPersonClicked(friend.id)">
+      {{ friend.id }}. {{ friend.firstName }} {{ friend.surname }}
+    </p>
+  </div>
+  <div class="col-12" *ngIf="allFriends.length === 0">
+    <p>No friends!</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h3>Friends of friends</h3>
+  </div>
+  <div class="col-12" *ngFor="let friendOfFriend of allFriendsOfFriends">
+    <p style="cursor: pointer" (click)="onPersonClicked(friendOfFriend.id)">
+      {{ friendOfFriend.id }}. {{ friendOfFriend.firstName }}
+      {{ friendOfFriend.surname }}
+    </p>
+  </div>
+  <div class="col-12" *ngIf="allFriendsOfFriends.length === 0">
+    <p>No friends of friends!</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h3>Suggested friends</h3>
+  </div>
+  <div class="col-12" *ngFor="let suggestedFriend of allSuggestedFriends">
+    <p style="cursor: pointer" (click)="onPersonClicked(suggestedFriend.id)">
+      {{ suggestedFriend.id }}. {{ suggestedFriend.firstName }}
+      {{ suggestedFriend.surname }}
+    </p>
+  </div>
+  <div class="col-12" *ngIf="allSuggestedFriends.length === 0">
+    <p>No suggested friends!</p>
+  </div>
+</div>
